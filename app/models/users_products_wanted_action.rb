@@ -22,7 +22,7 @@ class UsersProductsWantedAction < ActiveRecord::Base
         return (min > 1)? "#{min} minutes" : "#{min} minute"
       end
     else
-      return (sec > 1)? "#{sec} seconds" : "#{sec} second"
+      return (sec > 1)? "#{sec.to_i} seconds" : "#{sec.to_i} second"
     end   
   end
   
