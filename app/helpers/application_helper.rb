@@ -18,8 +18,7 @@ module ApplicationHelper
   end
     
   def getAppUrl()
-    return 'http://localhost:3000/'
-    ret##urn 'http://quotesapp.herokuapp.com/'
+    return 'http://sharathon.herokuapp.com/'
   end
   
   def uri_escape(url)
