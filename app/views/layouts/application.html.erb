@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <title><%= full_title(yield(:title)) %></title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+     <%= stylesheet_link_tag    "application", :media => "all" %>
+     <%= javascript_include_tag "application" %>
+     <%= csrf_meta_tags %>
+     <!--[if lt IE 9]>
+         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+  </head>
+  <body>
+     <header class="navbar navbar-fixed-top navbar-inverse">
+     <div class="navbar-inner">
+       <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a> 
+              <%= link_to "Sharethon", root_url, id: "logo", class: "brand" %>
+              <nav>
+                <ul class="nav pull-right">
+                  <li><%= link_to "Home",    '/' %></li>
+                  <li><%= link_to "Help",    '/#' %></li>
+                  <li><%= link_to "Settings",    '/#' %></li>
+                  <% unless isLoggedIn? %>
+                     <li><%= link_to image_tag('facebook_login_button.png'), 'fblogin' %></li>
+                  <% else %>
+                     <li><%= link_to 'Sign Out', :fblogout %></li>
+                  <% end %>
+                </ul>
+              </nav>  
+       </div>
+     </div>
+     <% if isLoggedIn? %>
+         <p class="navbar-text pull-right">Hello <%= currentuser %>&nbsp;!!</p>
+     <% end %>
+    
+     </header>
+     <div class="container-fluid">
+       <div class="row-fluid">
+         <div class="span2">
+           <ul class="nav nav-list">
+	     <li class="active"><a href="/"><i class="icon-user"></i> <%= currentuser %></a></li>
+	   </ul>  
+	   <br />
+	   <br />
+           <ul class="nav nav-list">
+	     <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+	     <li><% unless isLoggedIn? %><a href="/fblogin"><i class="icon-user"></i> SignIn</a>
+	         <% else %><a href="/fblogout"><i class="icon-off"></i> SignOut</a>
+	         <% end %></li>
+	     <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+             <li><a href="#"><i class="icon-book"></i> Help</a></li>
+           </ul>
+         </div>
+         <div class="span8">
+            <p class="lead muted">See the power of sharing ...</p>
+            <%= yield %>
+         </div>
+         <div class="span2"></div>
+         </div>  
+     </div>
+     
+   </body>
+</html>

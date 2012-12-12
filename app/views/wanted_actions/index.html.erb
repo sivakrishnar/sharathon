@@ -1,0 +1,23 @@
+<h1>Listing wanted_actions</h1>
+
+<table>
+  <tr>
+    <th>Wanted action</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wanted_actions.each do |wanted_action| %>
+  <tr>
+    <td><%= wanted_action.wanted_action %></td>
+    <td><%= link_to 'Show', wanted_action %></td>
+    <td><%= link_to 'Edit', edit_wanted_action_path(wanted_action) %></td>
+    <td><%= link_to 'Destroy', wanted_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wanted action', new_wanted_action_path %>

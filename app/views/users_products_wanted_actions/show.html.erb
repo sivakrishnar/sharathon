@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @users_products_wanted_action.user_id %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @users_products_wanted_action.product_id %>
+</p>
+
+<p>
+  <b>Wanted action:</b>
+  <%= @users_products_wanted_action.wanted_action_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_users_products_wanted_action_path(@users_products_wanted_action) %> |
+<%= link_to 'Back', users_products_wanted_actions_path %>

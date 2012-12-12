@@ -1,0 +1,27 @@
+<h1>Listing users_products_wanted_actions</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Product</th>
+    <th>Wanted action</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users_products_wanted_actions.each do |users_products_wanted_action| %>
+  <tr>
+    <td><%= users_products_wanted_action.user_id %></td>
+    <td><%= users_products_wanted_action.product_id %></td>
+    <td><%= users_products_wanted_action.wanted_action_id %></td>
+    <td><%= link_to 'Show', users_products_wanted_action %></td>
+    <td><%= link_to 'Edit', edit_users_products_wanted_action_path(users_products_wanted_action) %></td>
+    <td><%= link_to 'Destroy', users_products_wanted_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Users products wanted action', new_users_products_wanted_action_path %>

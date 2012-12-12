@@ -1,0 +1,8 @@
+copied 
+./bootstrap/css
+./bootstrap/js
+./bootstrap/img
+
+to current folder.   
+
+Renamed bootstrap as bootstrap_deprecated     

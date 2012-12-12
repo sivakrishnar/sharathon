@@ -1,0 +1,18 @@
+
+<%= render 'form' %>
+<% now = Time.now %>
+<table>
+<% @posts.each do |post| %>
+  <tr>
+    <td><h5>
+    <% if post.wanted_action_id == 1 %><i class="icon-arrow-left"></i>
+    <% elsif post.wanted_action_id == 2 %><i class="icon-arrow-right"></i>
+    <% elsif post.wanted_action_id == 3 %><i class="icon-briefcase"></i>
+    <% else %><i class="icon-road"></i><% end %>
+    <%=post.user.firstname %> <%=post.user.middlename %> <%=post.user.lastname %> wants to <i><%= post.wanted_action.wanted_action %></i> <u><%= post.product.name %></u> </h5> 
+    <label class="muted">Posted <%= post.time_ago %> ago</label></td>
+  </tr>
+<% end %>
+</table>
+
+
