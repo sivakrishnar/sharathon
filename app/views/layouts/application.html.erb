@@ -48,11 +48,12 @@
 	   <br />
            <ul class="nav nav-list">
 	     <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
-	     <li><% unless isLoggedIn? %><a href="/fblogin"><i class="icon-user"></i> SignIn</a>
-	         <% else %><a href="/fblogout"><i class="icon-off"></i> SignOut</a>
-	         <% end %></li>
 	     <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
              <li><a href="#"><i class="icon-book"></i> Help</a></li>
+             <li><% unless isLoggedIn? %><a href="/fblogin"><i class="icon-user"></i> SignIn</a>
+	     	         <% else %><a href="/fblogout"><i class="icon-off"></i> SignOut</a>
+	         <% end %>
+	     </li>
            </ul>
          </div>
          <div class="span8">
