@@ -35,17 +35,15 @@
               </nav>  
        </div>
      </div>
-     <% if isLoggedIn? %>
-         <p class="navbar-text pull-right">Hello <%= currentuser %>&nbsp;!!</p>
-     <% end %>
-    
      </header>
      <div class="container-fluid">
        <div class="row-fluid">
          <div class="span2">
-           <ul class="nav nav-list">
-	     <li class="active"><a href="/"><i class="icon-user"></i> <%= currentuser %></a></li>
-	   </ul>  
+           <% if isLoggedIn? %>
+             <ul class="nav nav-list">
+	       <li class="active"><a href="/"><i class="icon-user"></i> <%= currentuser %></a></li>
+	     </ul>  
+	   <% end %>
 	   <br />
 	   <br />
            <ul class="nav nav-list">

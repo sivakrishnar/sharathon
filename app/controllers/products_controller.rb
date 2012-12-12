@@ -55,21 +55,20 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     bool = false
-    p params
     @product = Product.new(params[:product])
-    if @product.save
-      upwa = UsersProductsWantedAction.new(:product_id => @product.id, :user_id => session[:facebook_id], :wanted_action_id => params[:wanted_action][:id])
-      if upwa.save
-        bool = true    
-      end
+    if isLoggedIn?
+      if @product.save
+        upwa = UsersProductsWantedAction.new(:product_id => @product.id, :user_id => session[:facebook_id], :wanted_action_id => params[:wanted_action][:id])
+        bool = true if upwa.save  
+      end   
     end
-    
     respond_to do |format|
       if bool
         format.html { redirect_to :root, notice: 'Post successful...' }
         format.json { render json: @product, status: :created, location: @product }
       else
-        format.html { render action: "new" }
+        @product.errors.add :base, "You must login..."
+        format.html { render action: "index" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
