@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_title(page_title)
-    base_title = 'Sharathon - Welcome to the world of sharing and living socially.'
+    base_title = 'Collaborrow - Power of sharing and collaboration...'
     if page_title.empty?
         base_title
     else
