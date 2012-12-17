@@ -31,3 +31,5 @@ gem 'bootstrap-sass', '2.1'
 
 # To use debugger
 # gem 'ruby-debug'
+
+gem 'amazon-ecs'
