@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  include ProductionHelper
+  include ProductsHelper
 
   # GET /products
   # GET /products.json
