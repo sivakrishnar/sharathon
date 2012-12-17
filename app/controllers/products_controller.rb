@@ -17,9 +17,11 @@ class ProductsController < ApplicationController
         hashids << session[:facebook_id]
         @posts = UsersProductsWantedAction.all(:conditions => {:user_id => hashids.sort}, :order => "updated_at DESC")
         p @posts
+        item_search('ruby')
     else
       @posts = []
     end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
