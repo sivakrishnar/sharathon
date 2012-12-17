@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  include ProductionHelper
+
   # GET /products
   # GET /products.json
   def index
