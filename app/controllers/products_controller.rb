@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
         hashids << session[:facebook_id]
         @posts = UsersProductsWantedAction.all(:conditions => {:user_id => hashids.sort}, :order => "updated_at DESC")
         p @posts
-        item_search('ruby')
+        # item_search('ruby')
     else
       @posts = []
     end
