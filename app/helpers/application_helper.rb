@@ -18,7 +18,7 @@ module ApplicationHelper
   end
     
   def getAppUrl()
-    return 'http://sharathon.herokuapp.com/'
+    return 'http://collaborrow.com/'
   end
   
   def uri_escape(url)
