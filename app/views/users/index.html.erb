@@ -15,7 +15,15 @@
        tmp = "warning"
      end %>
   <tr class='<%= tmp %>'>
-    <td><%= user %></td>
+    <td><%= user %>
+    Ignore?
+     <label class="radio">
+      <input type="radio" name="<%= @friends[user] %>" id="optionsRadios1" value="1" checked> Yes
+     </label>
+     <label class="radio">
+      <input type="radio" name="<%= @friends[user] %>" id="optionsRadios2" value="option2"> No
+      </label>
+    </td>
     <td><label class="checkbox inline">
           <input type="checkbox" id="inlineCheckbox1" value="1"> Borrow
         </label>
