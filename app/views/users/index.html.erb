@@ -9,13 +9,13 @@
   <% i = 0;
    @friends.keys.sort.each do |user| %>
   <% i = i+1 
-     if i/2 == 0 
+     if i%2 == 0 
        tmp = "info"
      else
        tmp = "warning"
      end %>
   <tr class='<%= tmp %>'>
-    <td><%= @friends[user] %></td>
+    <td><%= user %></td>
     <td><label class="checkbox inline">
           <input type="checkbox" id="inlineCheckbox1" value="1"> Borrow
         </label>

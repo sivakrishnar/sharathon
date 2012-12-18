@@ -10,7 +10,7 @@ class UsersController < ApplicationController
           data = JSON.parse(r.to_s)
           user_friends = data["data"]
           @friends = {}
-          user_friends.each{|tmp| @friends[tmp['id']] = tmp['name']}
+          user_friends.each{|tmp| @friends[tmp['name']] = tmp['id']}
         @user = User.find_by_facebook_id(session[:facebook_id])
     else
         @friends = []
