@@ -1,13 +1,20 @@
 <h1>Your current friends in facebook: </h1>
 
-<table class="table table-bordered">
-  <tr class='error'>
+<table class="table table-condensed">
+  <tr>
     <th>Friend</th>
     <th>Settings</th>
   </tr>
 
-<% @friends.keys.sort.each do |user| %>
-  <tr class='info'>
+  <% i = 0;
+   @friends.keys.sort.each do |user| %>
+  <% i = i+1 
+     if i/2 == 0 
+       tmp = "info"
+     else
+       tmp = "warning"
+     end %>
+  <tr class='<%= tmp %>'>
     <td><%= @friends[user] %></td>
     <td><label class="checkbox inline">
           <input type="checkbox" id="inlineCheckbox1" value="1"> Borrow
