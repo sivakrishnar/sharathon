@@ -16,22 +16,20 @@
      end %>
   <tr class='<%= tmp %>'>
     <td><%= user %>
-    Ignore?
-     <label class="radio">
-      <input type="radio" name="<%= @friends[user] %>" id="optionsRadios1" value="1" checked> Yes
-     </label>
-     <label class="radio">
+    <label class="radio">
+      Ignore? <input type="radio" name="<%= @friends[user] %>" id="optionsRadios1" value="1" checked> Yes
+      &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="radio" name="<%= @friends[user] %>" id="optionsRadios2" value="option2"> No
-      </label>
+    </label>
     </td>
     <td><label class="checkbox inline">
-          <input type="checkbox" id="inlineCheckbox1" value="1"> Borrow
+          <input type="checkbox" id="inlineCheckbox1" value="1" checked> Borrow
         </label>
         <label class="checkbox inline">
-          <input type="checkbox" id="inlineCheckbox2" value="2"> Share
+          <input type="checkbox" id="inlineCheckbox2" value="2" checked> Share
         </label>
         <label class="checkbox inline">
-          <input type="checkbox" id="inlineCheckbox3" value="3"> Buy
+          <input type="checkbox" id="inlineCheckbox3" value="3" checked> Buy
         </label>
     </td>
   </tr>
