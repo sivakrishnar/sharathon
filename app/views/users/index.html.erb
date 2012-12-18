@@ -3,11 +3,22 @@
 <table class="table table-bordered">
   <tr class='error'>
     <th>Friend</th>
+    <th>Settings</th>
   </tr>
 
-<% @friends.keys.each do |user| %>
+<% @friends.keys.sort.each do |user| %>
   <tr class='info'>
     <td><%= @friends[user] %></td>
+    <td><label class="checkbox inline">
+          <input type="checkbox" id="inlineCheckbox1" value="1"> Borrow
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="inlineCheckbox2" value="2"> Share
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="inlineCheckbox3" value="3"> Buy
+        </label>
+    </td>
   </tr>
 <% end %>
 </table>
