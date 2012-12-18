@@ -18,8 +18,10 @@
     <td><%= user %>
     <label class="radio">
       Ignore? <input type="radio" name="<%= @friends[user] %>" id="optionsRadios1" value="1" checked> Yes
+    </label>
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="radio" name="<%= @friends[user] %>" id="optionsRadios2" value="option2"> No
+    <label class="radio">
+       <input type="radio" name="<%= @friends[user] %>" id="optionsRadios2" value="option2"> No
     </label>
     </td>
     <td><label class="checkbox inline">
