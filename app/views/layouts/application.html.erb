@@ -24,7 +24,7 @@
                 <ul class="nav pull-right">
                   <li><%= link_to "Home",    '/' %></li>
                   <li><%= link_to "Help",    '/#' %></li>
-                  <li><%= link_to "Settings",    '/#' %></li>
+                  <li><%= link_to "Settings",    '/settings' %></li>
                   <% unless isLoggedIn? %>
                      <li><%= link_to image_tag('facebook_login_button.png'), 'fblogin' %></li>
                   <% else %>
@@ -47,7 +47,7 @@
 	   <br />
            <ul class="nav nav-list">
 	     <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
-	     <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+	     <li><a href="/settings"><i class="icon-wrench"></i> Settings</a></li>
              <li><a href="#"><i class="icon-book"></i> Help</a></li>
              <li><% unless isLoggedIn? %><a href="/fblogin"><i class="icon-user"></i> SignIn</a>
 	     	         <% else %><a href="/fblogout"><i class="icon-off"></i> SignOut</a>

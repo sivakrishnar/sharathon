@@ -2,11 +2,25 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if isLoggedIn?
+          puts "Getting user friends list..."
+          graph_url = "https://graph.facebook.com/me/friends?access_token=#{uri_escape(session[:facebook_access_token])}"
+          puts graph_url
+          r = RestClient.get graph_url
+          data = JSON.parse(r.to_s)
+          user_friends = data["data"]
+          @friends = {}
+          user_friends.each{|tmp| @friends[tmp['id']] = tmp['name']}
+        @user = User.find_by_facebook_id(session[:facebook_id])
+    else
+        @friends = []
+        @user = nil 
+    end
+    
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @users }
+      format.json { render :json => @user }
     end
   end
 
