@@ -1,9 +1,11 @@
 <h1>Your current friends in facebook: </h1>
-
+<br />
+<% if @previous %><%= link_to 'Previous', :settings(:offset => @offset-1) , :class => 'float-right'%><% else %>Previous<% end %> 
+<% if @next %><%= link_to 'Next', :settings(:offset => @offset+1), :class => 'float-left' %><% else %> Next <% end %>
 <table class="table table-condensed">
   <tr>
     <th>Friend</th>
-    <th>Settings</th>
+    <th>Activity setting</th>
   </tr>
 
   <% i = 0;
@@ -15,7 +17,7 @@
        tmp = "warning"
      end %>
   <tr class='<%= tmp %>'>
-    <td><%= user %>
+    <td><%= user %><br />
     Ignore?
     <label class="radio inline">
         <input type="radio" name="<%= @friends[user] %>" id="optionsRadios1" value="1" checked> Yes
@@ -38,3 +40,6 @@
   </tr>
 <% end %>
 </table>
+<br />
+<% if @previous %><%= link_to 'Previous', :settings(:offset => @offset-1), :class => 'float-left' %><% else %>Previous<% end %> 
+<% if @next %><%= link_to 'Next', :settings(:offset => @offset+1), :class => 'float-right' %><% else %> Next <% end %>
