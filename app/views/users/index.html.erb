@@ -1,15 +1,19 @@
 <h1>Your current friends in facebook: </h1>
 <br />
+
 <table class="table table-condensed">
   <caption>
     <% if @previous %><%= link_to 'Previous', "/settings?offset=#{@offset.to_i-1}" , :class => 'btn pull-left'%><% end %> 
-    <% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'btn pull-right' %><% end %>
+    <% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'btn pull-right' %><% end %><br />
   </caption>
+  <% if @friends and @friends.keys.size > 0 %>
   <tr>
     <th>Friend</th>
     <th>Activity setting</th>
   </tr>
-
+  <% else %>
+  
+  <% end %> 
   <% i = 0;
    @friends.keys.sort.each do |user| %>
   <% i = i+1 

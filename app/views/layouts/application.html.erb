@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </a> 
-              <%= link_to "Collaborrow", root_url, id: "logo", class: "brand" %>
+              <h1><%= link_to "Collaborrow", root_url, id: "logo", class: "brand" %></h1>
               <nav>
                 <ul class="nav pull-right">
                   <li><%= link_to "Home",    '/' %></li>
@@ -46,7 +46,7 @@
 	   <br />
 	   <br />
            <ul class="nav nav-list">
-	     <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+	     <li><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
 	     <li><a href="/settings"><i class="icon-wrench"></i> Settings</a></li>
              <li><a href="#"><i class="icon-book"></i> Help</a></li>
              <li><% unless isLoggedIn? %><a href="/fblogin"><i class="icon-user"></i> SignIn</a>
