@@ -5,7 +5,7 @@
 <% if @posts
    @posts.each do |post| %>
   <tr>
-    <td><h5>
+    <td><img src="https://graph.facebook.com/<%= post.user_id %>/picture"/><h5>
     <% if post.wanted_action_id == 1 %><i class="icon-arrow-left"></i>
     <% elsif post.wanted_action_id == 2 %><i class="icon-arrow-right"></i>
     <% elsif post.wanted_action_id == 3 %><i class="icon-briefcase"></i>
