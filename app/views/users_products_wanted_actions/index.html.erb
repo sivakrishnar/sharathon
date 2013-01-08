@@ -12,7 +12,7 @@
 
 <% @users_products_wanted_actions.each do |users_products_wanted_action| %>
   <tr>
-    <td><%= users_products_wanted_action.user_id %></td>
+    <td><img src="https://graph.facebook.com/<%= users_products_wanted_action.user_id %>/picture"/><%= users_products_wanted_action.user_id %></td>
     <td><%= users_products_wanted_action.product_id %></td>
     <td><%= users_products_wanted_action.wanted_action_id %></td>
     <td><%= link_to 'Show', users_products_wanted_action %></td>
