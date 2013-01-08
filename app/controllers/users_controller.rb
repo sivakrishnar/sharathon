@@ -7,7 +7,7 @@ class UsersController < ApplicationController
           @offset =  params[:offset].to_i if params[:offset]
           
           puts "Getting user friends list..."
-          graph_url = "https://graph.facebook.com/me/friends?limit=50&offset=#{@offset*30}&access_token=#{uri_escape(session[:facebook_access_token])}"
+          graph_url = "https://graph.facebook.com/me/friends?limit=30&offset=#{@offset*30}&access_token=#{uri_escape(session[:facebook_access_token])}"
           @next = false
           @prev = false
 

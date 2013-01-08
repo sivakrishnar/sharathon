@@ -1,12 +1,9 @@
 <h1>Your current friends in facebook: </h1>
-<br />
-<% if @previous %><%= link_to 'Previous', "/settings?offset=#{@offset.to_i-1}" , :class => 'float-right'%><% else %>Previous<% end %> 
-<% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'float-left' %><% else %> Next <% end %>
 
 <table class="table table-condensed">
   <caption>
-    <% if @previous %><%= link_to 'Previous', "/settings?offset=#{@offset.to_i-1}" , :class => 'float-right'%><% else %>Previous<% end %> 
-    <% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'float-left' %><% else %> Next <% end %>
+    <% if @previous %><%= link_to 'Previous', "/settings?offset=#{@offset.to_i-1}" , :class => 'pull-right'%><% else %>Previous<% end %> 
+    <% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'pull-left' %><% else %> Next <% end %>
   </caption>
   <tr>
     <th>Friend</th>
@@ -46,5 +43,5 @@
 <% end %>
 </table>
 <br />
-<% if @previous %><%= link_to 'Previous', "/settings?offset=#{@offset.to_i-1}" , :class => 'float-right'%><% else %>Previous<% end %> 
-<% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'float-left' %><% else %> Next <% end %>
+<% if @previous %><%= link_to 'Previous', "/settings?offset=#{@offset.to_i-1}" , :class => 'pull-right'%><% else %>Previous<% end %> 
+<% if @next %><%= link_to 'Next', "/settings?offset=#{@offset.to_i+1}", :class => 'pull-left' %><% else %> Next <% end %>
