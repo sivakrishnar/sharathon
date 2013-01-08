@@ -24,7 +24,7 @@
                 <ul class="nav pull-right">
                   <li><%= link_to "Home",    '/' %></li>
                   <li><%= link_to "Help",    '/#' %></li>
-                  <li><%= link_to "Settings",    '/settings' %></li>
+                  <li><%= link_to "Settings",    '/settings?offset=0' %></li>
                   <% unless isLoggedIn? %>
                      <li><%= link_to image_tag('facebook_login_button.png'), 'fblogin' %></li>
                   <% else %>

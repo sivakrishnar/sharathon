@@ -9,14 +9,14 @@ class UsersController < ApplicationController
           puts "Getting user friends list..."
           graph_url = "https://graph.facebook.com/me/friends?limit=30&offset=#{@offset*30}&access_token=#{uri_escape(session[:facebook_access_token])}"
           @next = false
-          @prev = false
+          @previous = false
 
           puts graph_url
           r = RestClient.get graph_url
           data = JSON.parse(r.to_s)
           user_friends = data["data"]
           @next = true if data["paging"]["next"]
-          @prev = true if data["paging"]["previous"]
+          @previous = true if data["paging"]["previous"]
           @friends = {}
           user_friends.each{|tmp| @friends[tmp['name']] = tmp['id']}
         @user = User.find_by_facebook_id(session[:facebook_id])
